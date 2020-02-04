@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Test Endpoint: ' + ${tlsParms.testEndpoint}" />
+<p th:text="'TLS Version: ' + ${tlsParms.tlsVersion}" />
+<pre id="json">
+</pre>
+<a href="/">Submit another message</a>
+
+<script th:inline="javascript">
+    var result = [(${tlsParms.result})];
+    document.getElementById("json").innerHTML = JSON.stringify(result, undefined, 2);
+</script>
+
+
+</body>
+</html>

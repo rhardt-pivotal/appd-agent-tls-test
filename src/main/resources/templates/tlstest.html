@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/}" th:object="${tlsParms}" method="post">
+    <p>Test Endpoint: <input type="text" th:field="*{testEndpoint}" /></p>
+    <p>TLS Version:
+        <select th:field="*{tlsVersion}">
+            <option value="SSLv3">SSLv3</option>
+            <option value="TLSv1">TLSv1 (1.0)</option>
+            <option value="TLSv1.1">TLSv1.1</option>
+            <option value="TLSv1.2">TLSv1.2</option>
+            <option value="TLSv1.3">TLSv1.3</option>
+        </select>
+    </p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
