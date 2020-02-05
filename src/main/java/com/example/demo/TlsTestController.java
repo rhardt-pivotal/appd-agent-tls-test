@@ -55,6 +55,7 @@ public class TlsTestController {
 
         HttpClient httpClient = HttpClients.custom()
                 .setSSLSocketFactory(f)
+                .useSystemProperties()
                 .build();
 
         HttpGet request = new HttpGet(tlsParms.getTestEndpoint());
